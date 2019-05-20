@@ -1,0 +1,10 @@
+$(document).ready(function(){
+    $("#activeAddress").attr("disabled","disabled");
+        $(".control").change(function(){
+        if($(this).val()=="1"){
+            $("#activeAddress").attr("disabled","disabled").val('');
+        }else{
+            $("#activeAddress").removeAttr("disabled");
+        }       
+    });
+});

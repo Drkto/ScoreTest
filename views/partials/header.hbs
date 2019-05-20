@@ -1,0 +1,30 @@
+<header class="bg-dark navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+    <a href="/" class="navbar-brand">
+        <img src="/images/logo2.png" alt="logo" width="50" height="50">
+    </a>
+    <div class="navbar-nav-scroll">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a href="/product" class="nav-link">Товары</a>
+            </li>
+            <li class="nav-item">
+                <a href="/delivery" class="nav-link">Доставка</a>
+            </li>
+            <li class="nav-item">
+                <a href="/about" class="nav-link">О нас</a>            
+            </li>
+                <div id = "cart" class="cart">
+                    <form class="cart_text" action="/cart" title="Перейти к оформлению заказа" method="POST">
+                        <input name="items" type="text" id="items" hidden>
+                        <button type="submit" class="button_cart">
+                            <img height="40px" width="40px" src="/images/cart.png" alt="Cart"> <br>
+                            <span class="cart_null"><span >Корзина</span> <span id="cartbox"></span></span>
+                        </div>
+                    </form>
+                </div>
+        </ul>
+    </div> 
+</header>

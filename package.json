@@ -1,0 +1,28 @@
+{
+  "name": "magazin",
+  "version": "1.0.0",
+  "description": "Gena ru tutorial",
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "express-session": "^1.16.1",
+    "hbs": "^4.0.4",
+    "node-pre-gyp": "^0.13.0",
+    "nodemon": "^1.18.10",
+    "passport": "^0.4.0",
+    "path": "^0.12.7",
+    "session": "^0.1.0",
+    "sqlite3": "^4.0.6"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Gena Makarov",
+  "license": "MIT",
+  "devDependencies": {}
+}

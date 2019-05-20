@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
+    <title>Всё для уюта: праздник</title>
+    
+</head>
+<body>
+<!--Begin header --> 
+{{> header}}
+<!--END header -->
+<!-- Begin Content -->
+    <section class="main-content">
+        <div class="container-fluid" >
+            <div class="row" >
+                <!--NAV-->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-2 navbar-expand-lg">
+                    <div class="col-12 begin_product">
+                        <h5>Праздник
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="toggle navigation">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"></path></svg>
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse navbar-collapse border-top" id="navbarSupportedContent1">
+                        <div class="bd-toc-item">
+                            <ul style="display: inline" class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <h6><a href="/product/decor">Декор</a></h6>
+                                </li>
+                                <li class="nav-item">
+                                    <h6><a href="/product/toys">Игрушки</a></h6>
+                                </li>
+                                <li>
+                                    <h6><a href="/product/dif">Разное</a></h6>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <!--end NAV-->
+                <div class="col-12 col-md-12 col-lg-9 col-xl-10">
+                    <div class="container-fluid">
+                        <div class="row">
+                        {{#each mas}}
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                                <div class="product">
+                                        <div style="text-align: center">
+                                            <img src="/images/{{PhotoID}}.jpg" height="150" width="150">
+                                        </div>
+                                        <div style="text-align: center">
+                                            <span>{{Product_Name}}</span> 
+                                        </div>
+                                        <div style="text-align: center">
+                                            <p> {{Price}} руб.</p>
+                                        </div>
+                                        <div style="text-align: center">
+                                            <button onclick="addProductItem(this.value)" class="btn btn-success" id="ADD_product" name="ADD_product" value="{{ID}}" data-toggle="modal"  data-target="#exampleModal">В корзину</button>
+                                        </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </main>
+            </div>
+        </div>
+    </section>
+    <!--END content -->
+    <!--FOOTER -->
+{{> footer}}
+    <!--END FOOTER -->
+{{> scripts}}
+</body>
+</html> 

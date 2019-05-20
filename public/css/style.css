@@ -1,0 +1,206 @@
+@font-face{
+  font-family: Newfront;
+  src: url(/founts/RoundsBlack.otf);
+}
+.navbar-brand {
+  margin-right: 0;
+}
+body{
+  background: white;
+}
+a{
+  text-decoration: none;
+  color: #979899;
+  font-weight: 600;
+}
+div{
+  font-weight: 500;
+}
+a:hover{
+  text-decoration: none;
+  color:black;
+  font-weight: 600;
+}
+.cartcol {
+  width: 30px; 
+  height: 30px; 
+  border-radius: 30px; 
+  text-align: center; 
+  display: block; 
+  background: red; 
+  position:absolute; 
+  top: 16px; 
+  right: 9px; 
+  color:white; 
+  line-height: 25px; 
+}
+body{
+  font-family: "BalticaRegular", sans-serif;
+  display: flex; flex-direction: column; height: 100%;
+}
+.main-span{
+  position: absolute;
+  left: 50px;
+  right: 0;
+  top: 50px;
+  bottom: 0;
+  color: white;
+}
+html{
+  height: 100%;
+}
+header{
+  flex: 0 0 auto;
+}
+.main-content{
+  flex: 1 0 auto;
+}
+footer{
+  flex: 0 0 auto;
+}
+.Click_button{
+  border: none;
+  background:white;
+  font-size: 26px;
+  font-weight: 600;
+}
+.begin_product{
+  position: relative; 
+  display: inline-block; 
+  direction: ltr; 
+  text-align: center;
+  padding: 10px 0;
+}
+.bd-toc-item{
+  padding:10px 0;
+}
+.InputQuin{
+  text-align:center; 
+  border: none;
+  width: 30px;
+  font-size: 150%;
+}
+.ninja{
+  display: none;
+}
+.infodelivery{
+  text-align: center;
+}
+.mainfot{
+ text-align: center;
+ color: #979797;
+ margin: 5px 0;
+}
+.poster{
+  height: 50%;
+  width: 70%;
+  text-align: center;
+  font-size: 150%;
+  margin: 20px;
+}
+.Copyright{
+  text-align: center;
+  margin: 10px 0;
+  font-size: 90%;
+  color: white;
+}
+.marmd{
+  margin: 5px 0;
+  text-align: center;
+}
+.cart_null{
+  color: rgba(255,255,255,.5);
+}
+.button_cart{
+  outline: none; 
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+}
+.carts{
+  display: none;
+}
+.nontarget{
+  color: #c5c5c5;
+}
+.deliveryword{
+  text-align:center;
+}
+.deliverybox{
+  margin: 50px 0;
+}
+.Come_Order{
+  text-align: center;
+}
+.Cart_Name{
+  font-size: 12px;
+  margin: 10px 0;
+}
+.ProductPrice{
+  text-align: center;
+}
+.cart{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  background: #363b3f; border-radius: 10px;
+}
+.btn{
+  padding: 6px 6px;
+}
+.cart_text{
+  font-size: 10px;
+  font-family: 'RobotoRegular',arial,helvetica,sans-serif;
+}
+.nav-item{
+  white-space: nowrap;
+}
+.product{
+  margin: 15px 10px;
+  padding: 10px 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,1);
+  font-size: 12px;
+  display: block;
+
+}
+.cart_client{
+  text-align:center;
+  margin: 20px 0;
+}
+.flex-container{
+  display: flex;
+  align-items: center;
+}
+.boxplusandminus{
+  margin: 5px;
+  flex: 1 15px;
+}
+@media (min-width: 768px){
+  .cart_text{
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px){
+ .PhotoProduct{
+  width:120px; 
+  height:120px;
+  }
+  .main-content{
+    font-size: 12px;
+  }
+  .mobile-view{
+    font-size: 10px;
+  }
+  .main-span{
+    position: absolute;
+    left: 15px;
+    right: 0;
+    top: 25px;
+    bottom: 0;
+    color: white;
+    font-size: 10px;
+  }
+}
+.NAV{
+  height: 100%;
+}

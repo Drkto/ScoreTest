@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Всё для уюта:админ</title>
+</head>
+
+<body>
+    <h1>Панель администратора</h1>
+    <table style="text-align:center;">
+        <thead>
+            <th>Имя Клиента</th>
+            <th>Продукт</th>
+            <th>Количество</th>
+            <th>Адрес</th>
+            <th>Номер телефона</th>
+            <th>Дата заказа</th>
+            <th>Цена за Количество</th>
+        </thead>
+        <tbody>
+            {{#each mas}}
+            <tr>
+                <td>{{Name}}</td>
+                <td>{{Product_Name}}</td>
+                <td>{{Count}}</td>
+                <td>{{Address}}</td>
+                <td>{{Phone}}</td>
+                <td>{{Date}}</td>
+                <td>{{PriceALL}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    </div>
+</body>
+
+</html>
