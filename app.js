@@ -221,16 +221,25 @@ app.get('/adminconsole', function (req, res) {
     res.render('adminpineapple')
 })
 app.post('/authorization', function (req, res) {
-    var login = req.body.login;
-    var password = req.body.password;
-    var log = 'genamakarov';
-    var pass = '0903';
-    if (login === log && password === pass) {
-        if (admins.length > 100) admins = [];
-        admins.push({ ip: req.host, date: new Date() })
-        res.redirect('adminpanel')
-    }
-    else res.redirect('/adminconsole')
+    let login = req.body.login;
+    let password = req.body.password;
+    let db = connection();
+    db.serialize(() => {
+        let sql = "SELECT Log, Pass FROM ADMIN";
+        db.all(sql, function (err, rows) {
+            if (err) console.log(err)
+            else {
+                let Login = rows.map(a => a.Log);
+                let Password = rows.map(a => a.Pass);
+                if (login == Login && password == Password) {
+                    if (admins.length > 100) admins = [];
+                    admins.push({ ip: req.host, date: new Date() })
+                    res.redirect('adminpanel')
+                }
+                else res.redirect('/adminconsole')
+            }
+        })
+    })
 })
 app.get('/adminpanel', function (req, res) {
     let user = admins.find(x => x.ip == req.headers['x-forwarded-for'] || req.connection.remoteAddress);

@@ -10,31 +10,48 @@
 
 <body>
     <h1>Панель администратора</h1>
-    <table style="text-align:center;">
-        <thead>
-            <th>Имя Клиента</th>
-            <th>Продукт</th>
-            <th>Количество</th>
-            <th>Адрес</th>
-            <th>Номер телефона</th>
-            <th>Дата заказа</th>
-            <th>Цена за Количество</th>
-        </thead>
-        <tbody>
-            {{#each mas}}
-            <tr>
-                <td>{{Name}}</td>
-                <td>{{Product_Name}}</td>
-                <td>{{Count}}</td>
-                <td>{{Address}}</td>
-                <td>{{Phone}}</td>
-                <td>{{Date}}</td>
-                <td>{{PriceALL}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+    <div><p>форма добавления товара</p><form action="">
+    <span>ID товара:</span> <input required type="number" name="id">
+    <span>Название товара:</span><input required type="text" name="product_name">
+    <span>Количество:</span> <input required type="text">
+    <span>Фото товара:</span> <input required type="file" name="Photo" multiple accept ="image/jpeg">
+    <button>Внести изменения</button></form>
     </div>
+    <div><p>форма удаления товара</p><form action="">
+    <span>ID товара:</span> <input required type="number">
+    <button>Внести изменения</button></form>
+    </div>    
+    <div><p>Форма удаления заказа</p> <form action="">
+    <span>ID заказа:</span><input required type="number">
+    <button>Внести изменения</button></form>
+    </div>
+    <div> <span>Форма вывода заказов</span>
+        <table style="text-align:center;">
+            <thead>
+                <th>Имя Клиента</th>
+                <th>Продукт</th>
+                <th>Количество</th>
+                <th>Адрес</th>
+                <th>Номер телефона</th>
+                <th>Дата заказа</th>
+                <th>Цена за Количество</th>
+            </thead>
+            <tbody>
+                {{#each mas}}
+                <tr>
+                    <td>{{Name}}</td>
+                    <td>{{Product_Name}}</td>
+                    <td>{{Count}}</td>
+                    <td>{{Address}}</td>
+                    <td>{{Phone}}</td>
+                    <td>{{Date}}</td>
+                    <td>{{PriceALL}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>
