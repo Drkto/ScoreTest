@@ -10,22 +10,25 @@
 
 <body>
     <h1>Панель администратора</h1>
-    <div><p>форма добавления товара</p><form action="">
-    <span>ID товара:</span> <input required type="number" name="id">
-    <span>Название товара:</span><input required type="text" name="product_name">
-    <span>Количество:</span> <input required type="text">
-    <span>Фото товара:</span> <input required type="file" name="Photo" multiple accept ="image/jpeg">
-    <button>Внести изменения</button></form>
+    <div>
+        <p>форма добавления товара</p><form action="">
+        <span>ID товара:</span> <input required type="number" name="id">
+        <span>Название товара:</span><input required type="text" name="product_name">
+        <span>Количество:</span> <input required type="number">
+        <button>Внести изменения</button></form>
     </div>
-    <div><p>форма удаления товара</p><form action="">
-    <span>ID товара:</span> <input required type="number">
-    <button>Внести изменения</button></form>
+    <div>
+        <p>форма удаления товара</p><form action="/delproduct" method="POST">
+        <span>ID товара:</span> <input required type="number" name="idproduct">
+        <button type="submit">Удалить</button></form>
     </div>    
-    <div><p>Форма удаления заказа</p> <form action="">
-    <span>ID заказа:</span><input required type="number">
-    <button>Внести изменения</button></form>
+    <div>
+        <p>Форма удаления заказа</p> <form action="/delorder" method="POST">
+        <span>ID заказа:</span><input required type="number" name="idorder">
+        <button>Удалить</button></form>
     </div>
-    <div> <span>Форма вывода заказов</span>
+    <div> 
+        <p>Форма вывода заказов</p>
         <table style="text-align:center;">
             <thead>
                 <th>Имя Клиента</th>
@@ -51,7 +54,5 @@
             </tbody>
         </table>
     </div>
-
 </body>
-
 </html>
