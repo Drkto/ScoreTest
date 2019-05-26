@@ -11,11 +11,13 @@
 <body>
     <h1>Панель администратора</h1>
     <div>
-        <p>форма добавления товара</p><form action="">
-        <span>ID товара:</span> <input required type="number" name="id">
-        <span>Название товара:</span><input required type="text" name="product_name">
-        <span>Количество:</span> <input required type="number">
-        <button>Внести изменения</button></form>
+        <p>форма добавления товара</p><form action="/insproduct" method="POST">
+        <span>ID товара:</span> <input required type="number" name="idproduct">
+        <span>Название товара:</span><input required type="text" name="nproduct">
+        <span>Цена товара:</span><input required type="number" name="price">
+        <span>Фото:</span><input required type="text" name="photo">
+        <span>Количество:</span> <input required type="number" name="quintity">
+        <button type="submit">Внести изменения</button></form>
     </div>
     <div>
         <p>форма удаления товара</p><form action="/delproduct" method="POST">

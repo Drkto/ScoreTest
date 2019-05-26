@@ -43,12 +43,12 @@ module.exports = function (app) {
             let sql = `SELECT Name, Product_Name, Count, Address, Phone, Date, Getting, Price*Count AS PriceALL  FROM Orders
             LEFT JOIN Product p ON Orders.ID_Product = p.ID`;
             db.serialize(() => {
-                db.all(sql, (err, rows) => {
+                db.all(sql, (err) => {
                     if (err) {
                         res.statusCode = 500
                         redirectToErrorPage(res, err);
                     }
-                    else res.render("adminpanel", { mas: rows });
+                    else res.render("adminpanel");
                 });
                 db.close(() => {
                     console.log('db close')
@@ -61,13 +61,16 @@ module.exports = function (app) {
         let idproduct = req.body.idproduct;
         let sql = `DELETE FROM Product WHERE ID = ${idproduct}`
         db.serialize(()=> {
-            db.run(sql, (err, rows)=> {
+            db.run(sql, (err)=> {
                 if (err) {
                     res.statusCode = 500
                     redirectToErrorPage(res, err);
                 }
                 else res.redirect("adminpanel")
             })
+            db.close(() => {
+                console.log('db close')
+            });
         }) 
     })
     app.post("/delorder", function(req, res){
@@ -75,13 +78,35 @@ module.exports = function (app) {
         let idorder = req.body.idorder;
         let sql = `DELETE FROM Orders WHERE ID = ${idorder}`
         db.serialize(()=> {
-            db.run(sql, (err, rows)=> {
+            db.run(sql, (err)=> {
                 if (err) {
-                    res.statusCode = 500
-                    redirectToErrorPage(res, err);
+                    return console.log(err.message);
                 }
                 else res.redirect("adminpanel")
             })
+            db.close(() => {
+                console.log('db close')
+            });
+        }) 
+    })
+    app.post("/insproduct", function(req, res){
+        let db = connection();
+        let idproduct = req.body.idproduct;
+        let nameproduct = req.body.nproduct;
+        let price = req.body.price;
+        let photo = req.body.photo;
+        let quin = req.body.quintity
+        let sql = `INSERT INTO Product(ID, Product_Name, Price, PhotoID, Quintity) VALUES (${idproduct}, '${nameproduct}', ${price}, '${photo}', ${quin})`
+        db.serialize(()=> {
+            db.run(sql, (err)=> {
+                if (err) {
+                    return console.log(err.message);
+                }
+                else res.redirect("adminpanel")
+            })
+            db.close(() => {
+                console.log('db close')
+            });
         }) 
     })
 }

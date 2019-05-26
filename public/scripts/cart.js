@@ -4,6 +4,7 @@ if (input) {
     if (!localStorage.getItem('cart')) document.getElementById('cart').style.display = "none";
 }
 
+
 //Возвращается массив
 function readstore() {
     let str = localStorage.getItem('cart');
