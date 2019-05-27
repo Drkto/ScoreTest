@@ -43,12 +43,12 @@ module.exports = function (app) {
             let sql = `SELECT Name, Product_Name, Count, Address, Phone, Date, Getting, Price*Count AS PriceALL  FROM Orders
             LEFT JOIN Product p ON Orders.ID_Product = p.ID`;
             db.serialize(() => {
-                db.all(sql, (err) => {
+                db.all(sql, (err, rows) => {
                     if (err) {
                         res.statusCode = 500
                         redirectToErrorPage(res, err);
                     }
-                    else res.render("adminpanel");
+                    else res.render("adminpanel", {mas: rows});
                 });
                 db.close(() => {
                     console.log('db close')
