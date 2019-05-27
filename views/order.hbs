@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,16 @@
     <meta http-equiv="refresh" content="5 url=/">
     <title>Всё для уюта</title>
 </head>
+
 <body>
     <p>Ваш заказ отправлен нам на обработку, ожидайте, скоро с вами свяжутся...</p>
     <span>Если переход на главную не произошел, нажмите...</span><a href="/">Вернуться на главную</a>
     <script>
         localStorage.clear();
-        window.onload = function() {
-            setTimeout(function(){alert("Вы будете перенаправлены на главную страницу")}, 3500) 
-            };
+        window.onload = function () {
+            setTimeout(function () { alert("Вы будете перенаправлены на главную страницу") }, 3500)
+        };
     </script>
 </body>
+
 </html>
