@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
     <title>Всё для уюта: игрушки</title>
@@ -12,6 +12,7 @@
 <body>
 <!--Begin header --> 
 {{> header}}
+{{> modal}}
 <!--END header -->
 <!-- Begin Content -->
     <section class="main-content">
@@ -60,7 +61,7 @@
                                             <p> {{Price}} руб.</p>
                                         </div>
                                         <div style="text-align: center">
-                                            <button onclick="addProductItem(this.value)" class="btn btn-success" id="ADD_product" name="ADD_product" value="{{ID}}" data-toggle="modal"  data-target="#exampleModal">В корзину</button>
+                                            <button onclick="addProductItem(this.value)" class="btn btn-success" id="ADD_product" name="ADD_product" value="{{ID}}" data-toggle="modal"  data-toggle="modal" data-target="#exampleModal">В корзину</button>
                                         </div>
                                 </div>
                             </div>
