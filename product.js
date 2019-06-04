@@ -31,7 +31,7 @@ module.exports = function (app) {
             redirectToErrorPage(res, err);
         }
     });
-    app.get("/product/dif", function (req, res) {
+    app.get("/product/clothes", function (req, res) {
         try {
             var db = connection();
             let sql = `SELECT * FROM Product WHERE ID > 20000 AND ID < 30000`;
@@ -41,7 +41,7 @@ module.exports = function (app) {
                         res.statusCode = 500
                         redirectToErrorPage(res, err);
                     }
-                    else res.render("dif", { mas: rows });
+                    else res.render("clothes", { mas: rows });
                 });
                 db.close(() => {
                     console.log('db close')
@@ -52,7 +52,28 @@ module.exports = function (app) {
             redirectToErrorPage(res, err);
         }
     });
-    app.get("/product/decor", function (req, res) {
+    app.get("/product/textile", function (req, res) {
+        try {
+            var db = connection();
+            let sql = `SELECT * FROM Product WHERE ID > 40000 AND ID < 50000`;
+            db.serialize(() => {
+                db.all(sql, (err, rows) => {
+                    if (err) {
+                        res.statusCode = 500
+                        redirectToErrorPage(res, err);
+                    }
+                    else res.render("textile", { mas: rows });
+                });
+                db.close(() => {
+                    console.log('db close')
+                })
+            });
+        }
+        catch (err) {
+            redirectToErrorPage(res, err);
+        }
+    });
+    app.get("/product/interior", function (req, res) {
         try {
             var db = connection();
             let sql = `SELECT * FROM Product WHERE ID > 10000 AND ID < 20000`;
@@ -62,7 +83,7 @@ module.exports = function (app) {
                         res.statusCode = 500
                         redirectToErrorPage(res, err);
                     }
-                    else res.render("decor", { mas: rows });
+                    else res.render("interior", { mas: rows });
                 });
                 db.close(() => {
                     console.log('db close')
