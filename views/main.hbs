@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/logo.ico" type="image/x-icon">
     <title>Всё для уюта: главная, информация</title>
+    <script>
+        function mobile(){
+                let img = document.getElementById("Main")
+                img.src="images/7mobile.png"
+            }
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            mobile();
+        } else {
+            ;
+        }
+    </script>
 </head>
 
 <body>
@@ -24,16 +35,6 @@
     {{> footer}}
     <!--END FOOTER -->
     {{> scripts}}
-    <script>
-        function mobile(){
-                let img = document.getElementById("Main")
-                img.src="images/7mobile.png"
-            }
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            mobile();
-        } else {
-            ;
-        }
-    </script>
+    
 </body>
 </html>
